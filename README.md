@@ -38,8 +38,9 @@ The system reads an RFID card over UART, authenticates the card ID, stores persi
 ## Demonstrated workflow
 
 <p align="center">
- <img width="1600" height="858" alt="scan-ready" src="https://github.com/user-attachments/assets/dcd682b1-f09b-4aaf-be0d-ae41e1e2446f" />
-  <img width="1280" height="786" alt="waiting-for-scan" src="https://github.com/user-attachments/assets/61036e49-38b9-48d5-9d6f-cdf8a2316279" />
+ <img width="1600" height="858" alt="scan-ready" src="https://github.com/user-attachments/assets/dcd682b1-f09b-4aaf-be0d-ae41e1e2446f" /
+  <img width="1280" height="573" alt="carddetails" src="https://github.com/user-attachments/assets/9ab9e00a-6348-429b-a363-22bfdd9d67c1" />
+
 
   </p>
 
