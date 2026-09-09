@@ -3,11 +3,9 @@
 > An embedded-C RFID access and citizen-service terminal for the NXP LPC21xx ARM7 family.
 
 The system reads an RFID card over UART, authenticates the card ID, stores persistent state in an SPI EEPROM, and presents citizen or officer services through a 20×4 LCD and 4×4 keypad. It is designed and demonstrated on real hardware—not as a simulator.
-## Hardware Architecture
-<p align="center">
-<img width="1600" height="878" alt="hardware-overview" src="https://github.com/user-attachments/assets/66013e49-59ca-4f7d-8750-bffbe081be12" />
 
-" alt="RFID citizen service system on an LPC2148 development board" width="820">
+<p align="center">
+  <img src="docs/images/hardware-overview.jpg" alt="RFID citizen service system on an LPC2148 development board" width="820">
 </p>
 
 ## Highlights
@@ -21,8 +19,7 @@ The system reads an RFID card over UART, authenticates the card ID, stores persi
 ## System architecture
 
 <p align="center">
- <img width="561" height="441" alt="system-architecture" src="https://github.com/user-attachments/assets/d8035e71-5e69-47ab-8386-b1b945458def" />
-
+  <img src="docs/images/block-diagram.svg" alt="Firmware-derived LPC2148 hardware block diagram showing keypad, RFID reader, LCD, indicators, RTC, and EEPROM" width="920">
 </p>
 
 | Block | Role |
@@ -38,16 +35,12 @@ The system reads an RFID card over UART, authenticates the card ID, stores persi
 ## Demonstrated workflow
 
 <p align="center">
- <img width="1600" height="858" alt="scan-ready" src="https://github.com/user-attachments/assets/dcd682b1-f09b-4aaf-be0d-ae41e1e2446f" />
- <img width="1280" height="573" alt="carddetails" src="https://github.com/user-attachments/assets/ebb28a0c-f152-49b6-a148-fa606532a4e3" />
-
-
-
-  </p>
+  <img src="docs/images/scan-ready.jpg" alt="Complete RFID prototype ready for card scanning" width="48%">
+  <img src="docs/images/waiting-for-scan.jpg" alt="LCD prompting for an RFID citizen card" width="48%">
+</p>
 
 <p align="center">
-  <img width="1280" height="574" alt="deekshithavalidcard" src="https://github.com/user-attachments/assets/b6f6ca9b-9d33-4fcc-a55e-7a0b677327db" />
-
+  <img src="docs/images/card-valid.jpg" alt="LCD confirming a valid card" width="48%">
 </p>
 
 1. Power on the system; it shows the RFID scan prompt.
@@ -59,15 +52,9 @@ The system reads an RFID card over UART, authenticates the card ID, stores persi
 ## LCD interface
 
 <p align="center">
-  <img width="1280" height="960" alt="lcd-menu" src="https://github.com/user-attachments/assets/88be96b6-39e5-458b-844a-d2119d32b8b4" />
-
-  <img width="1280" height="475" alt="pancarddetails" src="https://github.com/user-attachments/assets/d14179a8-213f-4623-840d-ccfcc90e5e8f" />
-
-  <img width="1280" height="766" alt="atmmenu" src="https://github.com/user-attachments/assets/4577b4d2-fe2b-42ac-993f-ab80cd561c0d" />
-  <img width="1280" height="936" alt="party symbols" src="https://github.com/user-attachments/assets/4cf76dbc-7e6f-403a-88a7-99fd80dc0cc5" />
-
-<img width="1280" height="574" alt="drvinglicmenu" src="https://github.com/user-attachments/assets/d29ebcb6-be30-4c19-beb7-513157e96096" />
-
+  <img src="docs/images/lcd-menu.jpg" alt="Citizen service menu on LCD" width="31%">
+  <img src="docs/images/record-view.jpg" alt="Citizen PAN record on LCD" width="31%">
+  <img src="docs/images/admin-menu.jpg" alt="ATM operations menu on LCD" width="31%">
 </p>
 
 <p align="center">
@@ -117,8 +104,8 @@ This table is derived from the firmware in this repository—not copied from the
 
 1. Clone or download this repository.
 2. Open `RFID_PROJECT.uvproj` in Keil µVision.
-3. Confirm that **Target 1** is set to LPC2148.
-4. Confirm the connections in the wiring table, then build **Target 1**.
+3. Confirm that **Target1** is set to LPC2148.
+4. Confirm the connections in the wiring table, then build **Target1**.
 5. Flash the generated `RFID_PROJECT.hex` using your board's supported programming method.
 6. Power the hardware and test a known citizen or officer card.
 
@@ -139,7 +126,3 @@ This table is derived from the firmware in this repository—not copied from the
 - The sample card IDs, names, balances, and PIN values are demonstration data. Replace them before any real deployment.
 - This project is appropriate for education and laboratory demonstration. It is **not** a production-grade identity, banking, or voting system: card IDs and PIN storage need stronger security for real-world use.
 - Do not commit generated Keil binaries or per-user IDE settings. The included `.gitignore` already excludes them.
-
-## Media
-
-All images in `docs/images/` are project documentation supplied by the repository owner. They are included to show the actual prototype and interface states.
