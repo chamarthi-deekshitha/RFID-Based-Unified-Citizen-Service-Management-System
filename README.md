@@ -61,8 +61,13 @@ The system reads an RFID card over UART, authenticates the card ID, stores persi
 <p align="center">
   <img width="1280" height="960" alt="lcd-menu" src="https://github.com/user-attachments/assets/88be96b6-39e5-458b-844a-d2119d32b8b4" />
 
-  <img src="docs/images/record-view.jpg" alt="Citizen PAN record on LCD" width="31%">
-  <img src="docs/images/admin-menu.jpg" alt="ATM operations menu on LCD" width="31%">
+  <img width="1280" height="475" alt="pancarddetails" src="https://github.com/user-attachments/assets/d14179a8-213f-4623-840d-ccfcc90e5e8f" />
+
+  <img width="1280" height="766" alt="atmmenu" src="https://github.com/user-attachments/assets/4577b4d2-fe2b-42ac-993f-ab80cd561c0d" />
+  <img width="1280" height="936" alt="party symbols" src="https://github.com/user-attachments/assets/4cf76dbc-7e6f-403a-88a7-99fd80dc0cc5" />
+
+<img width="1280" height="574" alt="drvinglicmenu" src="https://github.com/user-attachments/assets/d29ebcb6-be30-4c19-beb7-513157e96096" />
+
 </p>
 
 <p align="center">
