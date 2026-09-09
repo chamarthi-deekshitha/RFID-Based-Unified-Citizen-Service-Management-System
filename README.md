@@ -5,7 +5,7 @@
 The system reads an RFID card over UART, authenticates the card ID, stores persistent state in an SPI EEPROM, and presents citizen or officer services through a 20×4 LCD and 4×4 keypad. It is designed and demonstrated on real hardware—not as a simulator.
 
 <p align="center">
-  <img src="docs/images/<img width="1600" height="878" alt="hardware-overview" src="https://github.com/user-attachments/assets/f1516622-6ff1-41df-a79d-aec029110201" />
+<img width="1600" height="878" alt="hardware-overview" src="https://github.com/user-attachments/assets/66013e49-59ca-4f7d-8750-bffbe081be12" />
 
 " alt="RFID citizen service system on an LPC2148 development board" width="820">
 </p>
