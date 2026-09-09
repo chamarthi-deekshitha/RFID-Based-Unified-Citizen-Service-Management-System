@@ -3,7 +3,7 @@
 > An embedded-C RFID access and citizen-service terminal for the NXP LPC21xx ARM7 family.
 
 The system reads an RFID card over UART, authenticates the card ID, stores persistent state in an SPI EEPROM, and presents citizen or officer services through a 20×4 LCD and 4×4 keypad. It is designed and demonstrated on real hardware—not as a simulator.
-
+## Hardware Architecture
 <p align="center">
 <img width="1600" height="878" alt="hardware-overview" src="https://github.com/user-attachments/assets/66013e49-59ca-4f7d-8750-bffbe081be12" />
 
@@ -21,7 +21,8 @@ The system reads an RFID card over UART, authenticates the card ID, stores persi
 ## System architecture
 
 <p align="center">
-  <img src="docs/images/system-architecture.png" alt="Block diagram showing keypad and RFID reader connected to LPC2148, with LCD, indicators, and EEPROM outputs" width="620">
+ <img width="561" height="441" alt="system-architecture" src="https://github.com/user-attachments/assets/d8035e71-5e69-47ab-8386-b1b945458def" />
+
 </p>
 
 | Block | Role |
@@ -37,9 +38,10 @@ The system reads an RFID card over UART, authenticates the card ID, stores persi
 ## Demonstrated workflow
 
 <p align="center">
-  <img src="docs/images/scan-ready.jpg" alt="Complete RFID prototype ready for card scanning" width="48%">
-  <img src="docs/images/waiting-for-scan.jpg" alt="LCD prompting for an RFID citizen card" width="48%">
-</p>
+ <img width="1600" height="858" alt="scan-ready" src="https://github.com/user-attachments/assets/dcd682b1-f09b-4aaf-be0d-ae41e1e2446f" />
+  <img width="1280" height="786" alt="waiting-for-scan" src="https://github.com/user-attachments/assets/61036e49-38b9-48d5-9d6f-cdf8a2316279" />
+
+  </p>
 
 <p align="center">
   <img src="docs/images/card-valid.jpg" alt="LCD confirming a valid card" width="48%">
