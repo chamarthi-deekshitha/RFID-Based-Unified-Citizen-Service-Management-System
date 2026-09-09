@@ -41,13 +41,13 @@ The system reads an RFID card over UART, authenticates the card ID, stores persi
  <img width="1600" height="858" alt="scan-ready" src="https://github.com/user-attachments/assets/dcd682b1-f09b-4aaf-be0d-ae41e1e2446f" />
  <img width="1280" height="573" alt="carddetails" src="https://github.com/user-attachments/assets/ebb28a0c-f152-49b6-a148-fa606532a4e3" />
 
-  <img width="1280" height="573" alt="carddetails" src="https://github.com/user-attachments/assets/9ab9e00a-6348-429b-a363-22bfdd9d67c1" />
 
 
   </p>
 
 <p align="center">
-  <img src="docs/images/card-valid.jpg" alt="LCD confirming a valid card" width="48%">
+  <img width="1280" height="574" alt="deekshithavalidcard" src="https://github.com/user-attachments/assets/b6f6ca9b-9d33-4fcc-a55e-7a0b677327db" />
+
 </p>
 
 1. Power on the system; it shows the RFID scan prompt.
