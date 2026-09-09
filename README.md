@@ -113,9 +113,9 @@ The Vectored Interrupt Controller (VIC) maps incoming hardware triggers efficien
 *   **Layout:** Operates in 8-bit bus configuration utilizing pins `P0.8 - P0.15` for data and control pins `P0.16` (RS), `P0.17` (R/W), and `P0.18` (EN).
 *   **CGRAM Interface:** Contains functions to reprogram the internal CGRAM tables of the LCD display on-the-fly, allowing graphics manipulation of custom display metrics.
 
-### 4. SPI0 Engine & Calendaring
+### 4. SPI0 Engine & Calendar
 *   **SPI0 Init:** Standard 8-bit write-only/read SPI routines mapped directly to hardware peripheral registers (`S0SPCR`, `S0SPSR`, `S0SPDR`).
-*   **Calendaring:** Integrated mathematically to keep the RTC day register (`DOW`) calculated dynamically when administrative edits occur:
+*   **Calendar:** Integrated mathematically to keep the RTC day register (`DOW`) calculated dynamically when administrative edits occur:
 
 
 
