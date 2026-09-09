@@ -59,9 +59,13 @@ Each C file is compiled and linked with specific functional responsibilities to 
 ## LCD interface
 <p align="center">
   <img width="1268" height="772" alt="citizen_service_menu" src="https://github.com/user-attachments/assets/4c234ab6-8281-4124-9c2c-67e096568098" />
-  <img width="1600" height="1039" alt="WhatsApp Image 2026-09-09 at 2 21 38 PM" src="https://github.com/user-attachments/assets/7f2fad9b-2785-4028-8fb7-   95d3c63e8bbb" />
-  <img width="1599" height="920" alt="Pan" src="https://github.com/user-attachments/assets/ee1c4891-aed1-42ca-906c-1462aaa80ebf" />
-  <img width="1280" height="766" alt="ATM_interfcae" src="https://github.com/user-attachments/assets/8e3e2b73-26e0-4027-87b3-6b985dbfd923" />
+  
+  <img width="1280" height="475" alt="pancarddetails" src="https://github.com/user-attachments/assets/90b79fdc-8fd3-46ec-833f-8fffe85c002e" />
+
+  <img width="1280" height="766" alt="atmmenu" src="https://github.com/user-attachments/assets/7f07dd34-8438-4e48-9f59-36a219011785" />
+<img width="1280" height="936" alt="party symbols" src="https://github.com/user-attachments/assets/b60463f8-0285-4d45-b56f-b79a0125696a" />
+<img width="1280" height="574" alt="drvinglicmenu" src="https://github.com/user-attachments/assets/885208a0-bfa0-444d-9dba-26804e20ccea" />
+
   <img width="1280" height="785" alt="officer_status" src="https://github.com/user-attachments/assets/c1493aa2-5867-4c3b-ba65-00fe2aa5fd16" />
 
   <img width="1280" height="760" alt="RTC" src="https://github.com/user-attachments/assets/d2266567-1daf-4a95-9d46-713b00b89614" />
