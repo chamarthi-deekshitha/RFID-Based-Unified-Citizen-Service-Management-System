@@ -56,7 +56,8 @@ The system reads an RFID card over UART, authenticates the card ID, stores persi
 ## LCD interface
 
 <p align="center">
-  <img src="docs/images/lcd-menu.jpg" alt="Citizen service menu on LCD" width="31%">
+  <img width="1280" height="960" alt="lcd-menu" src="https://github.com/user-attachments/assets/88be96b6-39e5-458b-844a-d2119d32b8b4" />
+
   <img src="docs/images/record-view.jpg" alt="Citizen PAN record on LCD" width="31%">
   <img src="docs/images/admin-menu.jpg" alt="ATM operations menu on LCD" width="31%">
 </p>
