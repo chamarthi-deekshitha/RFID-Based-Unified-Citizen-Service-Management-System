@@ -1,4 +1,4 @@
-## RFID Unified citizen service system
+## RFID-Based Unified Citizen Service Management system
 
 ![Microcontroller](https://img.shields.io/badge/Microcontroller-LPC2148-blue.svg)
 ![Language](https://img.shields.io/badge/Language-Embedded%20C-orange.svg)
