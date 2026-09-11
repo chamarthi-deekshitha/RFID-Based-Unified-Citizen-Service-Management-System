@@ -5,7 +5,7 @@
 ![IDE](https://img.shields.io/badge/IDE-Keil%20uVision-green.svg)
 ![Status](https://img.shields.io/badge/Status-Complete-success.svg)
 
-An advanced embedded system project built on the **LPC2148 (ARM7TDMI-S)** microcontroller. This project implements a comprehensive **Unified Citizen System**, integrating critical utility databases and financial services into a single multi-purpose RFID smart card interface. 
+An embedded system project built on the **LPC2148 (ARM7TDMI-S)** microcontroller. This project implements a comprehensive **Unified Citizen System**, integrating critical utility databases and financial services into a single multi-purpose RFID smart card interface. 
 
 By scanning a unique citizen RFID card, authenticated users can access their Banking (ATM), Voting, Driving License status, and PAN details seamlessly through an interactive LCD and Keypad interface.
 
@@ -14,7 +14,7 @@ By scanning a unique citizen RFID card, authenticated users can access their Ban
 - **RFID authentication** — valid citizen, officer, and unrecognized card flows with LCD, LED, buzzer, and UART feedback.
 - **Citizen dashboard** — PAN-style details, ATM balance/withdrawal/deposit flow, voting status, and driving-licence information.
 - **Officer controls** — voting reset, RTC adjustment, and driving-licence-expiry maintenance.
-- **Persistent data** — account balances, voting flags, and PINs are retained in a 25LC512-compatible SPI EEPROM.
+- **Persistent data** — account balances, voting flags, and PINs are retained in a 25LC512 SPI EEPROM.
 - **Responsive UI** — keypad input uses debounce handling and timeout-aware scanning; RFID reception is interrupt-driven.
 
 ## Hardware architecture
@@ -39,7 +39,7 @@ The codebase is structured modularly to separate the low-level peripheral driver
  <img width="1536" height="1024" alt="software rfid image" src="https://github.com/user-attachments/assets/3b6ebbd8-ca0d-414b-9658-1aa57fa1afda" />
 </p>
 
-## Firmware Modules and Reesponsibilites 
+## Firmware Modules and Responsibilites 
 Each C file is compiled and linked with specific functional responsibilities to form the unified binary:
 <img width="1536" height="1024" alt="Modules menu" src="https://github.com/user-attachments/assets/c19456e9-f42f-4cae-b396-5cd5ab32e9eb" />
 
@@ -75,13 +75,13 @@ Each C file is compiled and linked with specific functional responsibilities to 
 ## ✨ System Features in Detail
 
 The system relies on an external **AT25LC512 (512Kbit / 64KB)** EEPROM over SPI0 to maintain persistent user states.
-### 1. 🪪 Universal RFID Authentication & Card Security
+### 1. 🪪 RFID-Based User Authentication
 *   **Dual Roles:** Distinguishes between standard citizens (cards registered in parallel arrays) and system administrators (Officer Master Card).
-*   **Loss Prevention / Blocking Mechanism:** The Officer Menu allows administrators to select any citizen by index and mark their status as `BLOCKED` (stores `0x01` at their EEPROM index). If a citizen's physical card is stolen/lost and scanned afterwards, access is immediately blocked, trigger outputs (Red LED and continuous Buzzer) are activated, and the incident is logged via serial telemetry.
+*   **Card Blocking Mechanism:** The Officer Menu allows administrators to select any citizen by index and mark their status as `BLOCKED` (stores `0x01` at their EEPROM index). If a citizen's physical card is stolen/lost and scanned afterwards, access is immediately blocked, trigger outputs (Red LED and continuous Buzzer) are activated, and the incident is logged via serial telemetry.
 *   **Inactivity & Redraw Resiliency:** Protects user sessions with a 20-second inactivity timeout for all keypad input operations, returning to the login loop if abandoned.
 
-### 2. 🏦 Secure ATM (Automated Teller Machine) Module
-*   **Encrypted Storage:** Balances and individual ATM PINs are stored securely in external non-volatile memory.
+### 2. 🏦 ATM (Automated Teller Machine) Module
+*   **Persistent Storage:** Balances and individual ATM PINs are stored in external non-volatile EEPROM.
 *   **Transactional Guards:**
     *   Restricts withdrawals to multiples of `100`, `200`, and `500` rupees.
     *   Enforces a minimum balance limit (`Rs. 500`) and a maximum storage boundary (`Rs. 65,535` based on 16-bit uint representation).
@@ -91,7 +91,7 @@ The system relies on an external **AT25LC512 (512Kbit / 64KB)** EEPROM over SPI0
 *   **Authentication Check:** Asks for login verification before allowing voting access.
 *   **Non-Volatile Registry:** Once a citizen casts their vote for any of the 4 configured parties (**BJP, INC, AAP, BSP**), the vote state is written to EEPROM. If the user tries to access the voting screen again, the system queries the EEPROM and immediately blocks the operation with an "Already Voted!" error message.
 
-### 4. 🚗 Driving License Expiry Engine (RTC & CGRAM)
+### 4. 🚗 Driving License Status (RTC & CGRAM)
 *   **Real-time Expiry Calculation:** Automatically compares the expiration date parameters (`exp_days`, `exp_months`, `exp_years` stored per user) against the running internal Real-Time Clock (RTC) registers.
 *   **Hardware Signaling:** 
     *   **Valid License:** Displays license details, illuminates the Green LED, and silences any buzzer alarms.
@@ -101,7 +101,7 @@ The system relies on an external **AT25LC512 (512Kbit / 64KB)** EEPROM over SPI0
 ---
 ## 🛠️ Low-Level Drivers & Implementation
 
-### 1. UART0 (RFID Transceiver Driver)
+### 1. UART0 RFID Interface Driver
 *   **Baud Rate & Frame Configurations:** Runs at a baud rate of `9600` configured for an ARM core peripheral clock (Pclk) of `15MHz` (`U0DLL = 97`, `U0DLM = 0`, `8N1` Mode).
 *   **Asynchronous Interrupt Handler:** Leverages the LPC2148 UART0 RX line interrupt (`UART0_ISR` mapped in VIC slot 5) to intercept RFID frames on the fly without blocking execution. 
 *   **Framing Delimiters:** Incoming RFID streams are parsed between the standard Serial Start-of-Text (`STX = 0x02`) and End-of-Text (`ETX = 0x03`) bytes to ensure packet transmission integrity.
@@ -113,8 +113,9 @@ The Vectored Interrupt Controller (VIC) maps incoming hardware triggers efficien
 *   **Layout:** Operates in 8-bit bus configuration utilizing pins `P0.8 - P0.15` for data and control pins `P0.16` (RS), `P0.17` (R/W), and `P0.18` (EN).
 *   **CGRAM Interface:** Contains functions to reprogram the internal CGRAM tables of the LCD display on-the-fly, allowing graphics manipulation of custom display metrics.
 
-### 4. SPI0 Engine & Calendar
+### 4. SPI0 & EEPROM Driver
 *   **SPI0 Init:** Standard 8-bit write-only/read SPI routines mapped directly to hardware peripheral registers (`S0SPCR`, `S0SPSR`, `S0SPDR`).
+### 5. RTC & Calendar  
 *   **Calendar:** Integrated mathematically to keep the RTC day register (`DOW`) calculated dynamically when administrative edits occur:
 
 
