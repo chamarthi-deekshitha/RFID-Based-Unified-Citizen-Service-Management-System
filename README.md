@@ -64,10 +64,10 @@ Each C file is compiled and linked with specific functional responsibilities to 
 
   <img width="1280" height="766" alt="atmmenu" src="https://github.com/user-attachments/assets/7f07dd34-8438-4e48-9f59-36a219011785" />
 <img width="1280" height="936" alt="party symbols" src="https://github.com/user-attachments/assets/b60463f8-0285-4d45-b56f-b79a0125696a" />
-<img width="1280" height="574" alt="drvinglicmenu" src="https://github.com/user-attachments/assets/885208a0-bfa0-444d-9dba-26804e20ccea" />
+
 
   <img width="1280" height="785" alt="officer_status" src="https://github.com/user-attachments/assets/c1493aa2-5867-4c3b-ba65-00fe2aa5fd16" />
-
+<img width="1280" height="574" alt="drvinglicmenu" src="https://github.com/user-attachments/assets/885208a0-bfa0-444d-9dba-26804e20ccea" />
   <img width="1280" height="760" alt="RTC" src="https://github.com/user-attachments/assets/d2266567-1daf-4a95-9d46-713b00b89614" />
 
 </p>
